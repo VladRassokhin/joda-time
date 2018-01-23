@@ -29,8 +29,6 @@ src/tz-data/
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 
-.idea/**/libraries
-
 classes/
 
 tracing-results/

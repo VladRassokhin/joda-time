@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="coverage-lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/tests-discovery-util/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/tests-discovery-util/lib" recursive="false" />
+  </library>
+</component>
