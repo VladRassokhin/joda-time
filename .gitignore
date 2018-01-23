@@ -32,3 +32,5 @@ src/tz-data/
 .idea/**/libraries
 
 classes/
+
+tracing-results/

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/joda-time.iml" filepath="$PROJECT_DIR$/joda-time.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests-discovery-util/tests-discovery-util.iml" filepath="$PROJECT_DIR$/tests-discovery-util/tests-discovery-util.iml" />
     </modules>
   </component>
 </project>

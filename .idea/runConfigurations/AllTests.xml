@@ -23,8 +23,6 @@
     </option>
     <envs />
     <patterns />
-    <method>
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Prepare TZDB" run_configuration_type="MavenRunConfiguration" />
-    </method>
+    <method />
   </configuration>
 </component>
