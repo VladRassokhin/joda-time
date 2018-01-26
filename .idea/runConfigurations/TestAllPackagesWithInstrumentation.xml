@@ -1,22 +1,15 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="TestAllPackagesWithInstrumentation" type="Application" factoryName="Application" nameIsGenerated="true">
-    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+    <option name="MAIN_CLASS_NAME" value="org.joda.time.TestAllPackagesWithInstrumentation" />
+    <module name="tests-discovery-util" />
+    <option name="VM_PARAMETERS" value="-javaagent:$PROJECT_DIR$/tests-discovery-util/lib/test-discovery-agent.jar -Dtest.discovery.listener=com.intellij.InternalTestDiscoveryListener -Dorg.jetbrains.instrumentation.trace.dir=$PROJECT_DIR$/tracing-results -Dorg.jetbrains.instrumentation.compact.traces=false -Dorg.jetbrains.instrumentation.zip.traces=false" />
+    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="org.joda.time.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <option name="MAIN_CLASS_NAME" value="org.joda.time.TestAllPackagesWithInstrumentation" />
-    <option name="VM_PARAMETERS" value="-javaagent:$PROJECT_DIR$/tests-discovery-util/lib/coverage-agent.jar -Dtest.discovery.listener=com.intellij.InternalTestDiscoveryListener -Dorg.jetbrains.instrumentation.trace.dir=$PROJECT_DIR$/tracing-results -Dorg.jetbrains.instrumentation.compact.traces=false -Dorg.jetbrains.instrumentation.zip.traces=false" />
-    <option name="PROGRAM_PARAMETERS" value="" />
-    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-    <option name="ALTERNATIVE_JRE_PATH" />
-    <option name="ENABLE_SWING_INSPECTOR" value="false" />
-    <option name="ENV_VARIABLES" />
-    <option name="PASS_PARENT_ENVS" value="true" />
-    <module name="tests-discovery-util" />
-    <envs />
     <method />
   </configuration>
 </component>
