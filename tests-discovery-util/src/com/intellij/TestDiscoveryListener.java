@@ -81,7 +81,7 @@ public class TestDiscoveryListener implements TestListener, Closeable {
 
     public Object getData() throws Exception {
         return Class.forName("com.intellij.rt.coverage.data.ProjectData")
-                .getMethod("getProjectData", new Class[0])
+                .getMethod("getProjectData")
                 .invoke(null);
     }
 
@@ -142,11 +142,8 @@ public class TestDiscoveryListener implements TestListener, Closeable {
         }
         zos.putNextEntry(e);
         if (!isDir) {
-            InputStream is = new FileInputStream(file);
-            try {
+            try (InputStream is = new FileInputStream(file)) {
                 copy(is, zos);
-            } finally {
-                is.close();
             }
         }
         zos.closeEntry();
