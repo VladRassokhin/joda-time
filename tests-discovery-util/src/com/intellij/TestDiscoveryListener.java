@@ -80,7 +80,7 @@ public class TestDiscoveryListener implements TestListener, Closeable {
     }
 
     public Object getData() throws Exception {
-        return Class.forName("com.intellij.rt.coverage.data.ProjectData")
+        return Class.forName("com.intellij.rt.coverage.data.TestDiscoveryProjectData")
                 .getMethod("getProjectData")
                 .invoke(null);
     }
