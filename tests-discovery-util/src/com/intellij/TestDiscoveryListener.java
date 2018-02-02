@@ -99,7 +99,7 @@ public class TestDiscoveryListener implements TestListener, Closeable {
     private void zipOutput(String tracesDirectory) {
         if (!myZipResults) return;
         final String zipName = "out.zip";
-        final File[] files = new File(tracesDirectory).listFiles((dir, name) -> name != null && !name.equalsIgnoreCase(zipName));
+        final File[] files = tracesDirectory == null ? null : new File(tracesDirectory).listFiles((dir, name) -> name != null && !name.equalsIgnoreCase(zipName));
         if (files == null) {
             System.out.println("No traces found.");
             return;
