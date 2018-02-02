@@ -2,7 +2,7 @@
   <configuration default="false" name="TestAllPackagesWithInstrumentation" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="org.joda.time.TestAllPackagesWithInstrumentation" />
     <module name="tests-discovery-util" />
-    <option name="VM_PARAMETERS" value="-javaagent:$PROJECT_DIR$/tests-discovery-util/lib/test-discovery-agent.jar -Dtest.discovery.listener=com.intellij.InternalTestDiscoveryListener -Dorg.jetbrains.instrumentation.trace.dir=$PROJECT_DIR$/tracing-results -Dorg.jetbrains.instrumentation.compact.traces=false -Dorg.jetbrains.instrumentation.zip.traces=false" />
+    <option name="VM_PARAMETERS" value="-javaagent:$PROJECT_DIR$/tests-discovery-util/lib/test-discovery-agent.jar -Dtest.discovery.listener=com.intellij.InternalTestDiscoveryListener -Dorg.jetbrains.instrumentation.trace.dir=$PROJECT_DIR$/tracing-results -Dorg.jetbrains.instrumentation.compact.traces=false -Dorg.jetbrains.instrumentation.zip.traces=false -Dtest.discovery.data.listener=com.intellij.rt.coverage.data.SocketTestDiscoveryDataListener -Dtest.discovery.data.port=9999" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <extension name="coverage">
       <pattern>
