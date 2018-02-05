@@ -54,8 +54,6 @@ public class TestAllPackagesWithInstrumentation extends TestAllPackages {
         } catch (Exception e) {
             System.err.println(e.getMessage());
             code = (TestRunner.EXCEPTION_EXIT);
-        } finally {
-            listener.close();
         }
         final long total = System.currentTimeMillis() - start;
         System.out.println("All tests took " + total + "ms to run");
