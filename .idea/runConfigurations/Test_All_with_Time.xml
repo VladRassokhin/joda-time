@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TestAllPackagesWithLog" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="Test All with Time" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.joda.time.TestAllPackagesWithLog" />
     <module name="tests-discovery-util" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />

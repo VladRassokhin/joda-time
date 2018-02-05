@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TestAllPackagesWithInstrumentation" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="Test All into Single File" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.joda.time.TestAllPackagesWithInstrumentation" />
     <module name="tests-discovery-util" />
-    <option name="VM_PARAMETERS" value="-javaagent:$PROJECT_DIR$/tests-discovery-util/lib/test-discovery-agent.jar -Dtest.discovery.data.listener=com.intellij.rt.coverage.data.SocketTestDiscoveryDataListener -Dtest.discovery.data.port=9999" />
+    <option name="VM_PARAMETERS" value="-javaagent:$PROJECT_DIR$/tests-discovery-util/lib/test-discovery-agent.jar -Dtest.discovery.data.listener=com.intellij.rt.coverage.data.SingleTrFileDiscoveryDataListener -Dorg.jetbrains.instrumentation.trace.file.buffer.size=10000000" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <extension name="coverage">
       <pattern>
