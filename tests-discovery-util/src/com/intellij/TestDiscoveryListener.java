@@ -34,8 +34,8 @@ public class TestDiscoveryListener implements TestListener {
     public void startTest(Test test) {
         try {
             final Object data = getData();
-            Method testStarted = data.getClass().getMethod("testDiscoveryStarted", String.class);
-            testStarted.invoke(data, getClassName(test) + "-" + getMethodName(test));
+            Method testStarted = data.getClass().getMethod("testDiscoveryStarted", String.class, String.class);
+            testStarted.invoke(data, getClassName(test), getMethodName(test));
         } catch (Throwable t) {
             t.printStackTrace();
         }
@@ -48,8 +48,8 @@ public class TestDiscoveryListener implements TestListener {
 
         try {
             final Object data = getData();
-            Method testEnded = data.getClass().getMethod("testDiscoveryEnded", String.class);
-            testEnded.invoke(data, "j" + className + "-" + methodName);
+            Method testEnded = data.getClass().getMethod("testDiscoveryEnded", String.class, String.class);
+            testEnded.invoke(data, className, methodName);
         } catch (Throwable t) {
             t.printStackTrace();
         }
