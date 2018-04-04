@@ -403,6 +403,11 @@
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+          <execution>
             <id>default-jar</id>
             <configuration>
               <archive>
