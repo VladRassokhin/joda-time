@@ -17,9 +17,14 @@ package com.intellij;
 
 import junit.framework.AssertionFailedError;
 import junit.framework.Test;
+import junit.framework.TestCase;
 import junit.framework.TestListener;
+import org.junit.runner.Describable;
+import org.junit.runner.Description;
 
 import java.lang.reflect.Method;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TestDiscoveryListener implements TestListener {
     @Override
@@ -56,15 +61,52 @@ public class TestDiscoveryListener implements TestListener {
     }
 
     private static String getMethodName(Test test) {
-        final String toString = test.toString();
-        final int braceIdx = toString.indexOf("(");
+        if (test instanceof TestCase) {
+            String name = ((TestCase)test).getName();
+            if (name != null) return name;
+        }
+
+        if (test instanceof Describable) {
+            Description description = ((Describable)test).getDescription();
+            String name = getMethodName(description);
+            if (name != null) return name;
+        }
+
+        String toString = test.toString();
+        int braceIdx = toString.indexOf("(");
         return braceIdx > 0 ? toString.substring(0, braceIdx) : toString;
     }
 
     private static String getClassName(Test test) {
-        final String toString = test.toString();
-        final int braceIdx = toString.indexOf("(");
-        return braceIdx > 0 && toString.endsWith(")") ? toString.substring(braceIdx + 1, toString.length() - 1) : null;
+        if (test instanceof Describable) {
+            Description description = ((Describable)test).getDescription();
+            String name = getClassName(description);
+            if (name != null) return name;
+        }
+        return test.getClass().getName();
+    }
+
+    public static String getClassName(Description description) {
+        try {
+            return description.getClassName();
+        }
+        catch (NoSuchMethodError e) {
+            final String displayName = description.getDisplayName();
+            Matcher matcher = Pattern.compile("(.*)\\((.*)\\)").matcher(displayName);
+            return matcher.matches() ? matcher.group(2) : displayName;
+        }
+    }
+
+    public static String getMethodName(Description description) {
+        try {
+            return description.getMethodName();
+        }
+        catch (NoSuchMethodError e) {
+            final String displayName = description.getDisplayName();
+            Matcher matcher = Pattern.compile("(.*)\\((.*)\\)").matcher(displayName);
+            if (matcher.matches()) return matcher.group(1);
+            return null;
+        }
     }
 
     public Object getData() throws Exception {
